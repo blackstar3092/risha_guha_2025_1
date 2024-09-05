@@ -1,9 +1,9 @@
 title: Nighthawk Pages 
 description: "Class of 2025"
-owner_name: John Mortensen
+owner_name: Risha Guha
 github_username: blackstar3092
-github_repo: "risha_guha_2025" 
-baseurl: "/risha_guha_2025"
+github_repo: "risha_guha_2025_1" 
+baseurl: "/risha_guha_2025_1"
 future: true
 remote_theme: jekyll/minima
 minima:
