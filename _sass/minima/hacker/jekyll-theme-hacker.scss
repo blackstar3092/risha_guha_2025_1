@@ -53,7 +53,7 @@ li {
 */
 
 header {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(95, 122, 228);
   width: 100%;
   border-bottom: 1px dashed $conifer; //header;
   padding: 20px 0;
@@ -165,7 +165,7 @@ pre {
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
   font-size: 16px;
-  color: #b5e853;
+  color: #3feed3;
   border-radius: 2px;
   word-wrap: normal;
   overflow: auto;
@@ -188,7 +188,7 @@ table {
 
 th {
   text-align: left;
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #3feed3;
   padding: 5px 10px;
 }
 
@@ -199,8 +199,8 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #b5e853;
-  color: #b5e853;
+  border-bottom: 1px dashed #3feed3;
+  color: #3feed3;
 }
 
 /* Buttons
@@ -232,7 +232,6 @@ hr {
   width: 16px;
   height: 16px;
   margin: 1px 8px 0 0;
-  float: left;
 }
 
 .btn-github .icon {
@@ -267,3 +266,5 @@ a {
 #a-title {
   text-decoration: none;
 }
+
+$theme-color: rgba(11, 0, 84)

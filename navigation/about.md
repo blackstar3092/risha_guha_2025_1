@@ -7,3 +7,13 @@ permalink: /about/
 #### I am interested in engineering, computer science, and cybersecurity. 
 
 <img src="{{site.baseurl}}/images/aboutme.png">
+
+
+<script>
+import emoji
+from emoji import emojize 
+
+
+</script>
+
+😊
