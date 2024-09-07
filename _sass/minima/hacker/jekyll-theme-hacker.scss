@@ -2,11 +2,11 @@
 @import "default_colors";
 @import "minima/dracula/dark-mode";
 @import "minima/dracula/theme";
-$body-background: $cod-grey !default;
+$body-background: $navy-blue !default;
 $body-foreground: $gallery !default;
 $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
-$blockquote-border: $dove-grey !default;
+$blockquote-border: $navy-blue !default;
 $container-max-width: 1000px;
 
 @mixin media-max-width($max-width) {
@@ -53,7 +53,7 @@ li {
 */
 
 header {
-  background: rgb(95, 122, 228);
+  background: $navy-blue;
   width: 100%;
   border-bottom: 1px dashed $conifer; //header;
   padding: 20px 0;
@@ -232,6 +232,7 @@ hr {
   width: 16px;
   height: 16px;
   margin: 1px 8px 0 0;
+  float: left;
 }
 
 .btn-github .icon {
@@ -266,5 +267,3 @@ a {
 #a-title {
   text-decoration: none;
 }
-
-$theme-color: rgba(11, 0, 84)
