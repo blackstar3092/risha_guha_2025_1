@@ -1,8 +1,0 @@
-<table>
-    <tr>
-        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks" alt=""></td>
-        <td><a href="{{site.baseurl}}/about">About</a></td>
-        <td><a href="{{site.baseurl}}/blog">Planning Notebook</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/planning">Code Cell Notebook</a></td>
-    </tr>
-</table>

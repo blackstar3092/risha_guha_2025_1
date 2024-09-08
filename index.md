@@ -33,12 +33,11 @@ hide: true
 <table>
     <tr>
         <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks" alt=""></td>
-        <td><a href="{{site.baseurl}}/about">About</a></td>
-        <td><a href="{{site.baseurl}}/blog">Planning Notebook</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/planning">Code Cell Notebook</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/planning">Planning Notebook</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/brazil">Brazil Guide</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/italy">Italy Guide</a></td>
     </tr>
 </table>
-
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
