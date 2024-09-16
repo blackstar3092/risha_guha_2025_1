@@ -29,15 +29,97 @@ hide: true
 </div>
 
 <p> </p>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
+        gap: 10px;
+    }
+    .grid-item {
+        text-align: center;
+    }
+    .grid-item img {
+        width: 100%;
+        height: 100px; /* Fixed height for uniformity */
+        object-fit: contain; /* Ensure the image fits within the fixed height */
+    }
+    .grid-item p {
+        margin: 5px 0; /* Add some margin for spacing */
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .image-gallery img {
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+</style>
+
+<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
+<div class="grid-container" id="grid_container">
+    <!-- content will be added here by JavaScript -->
+</div>
+
+<script>
+    // 1. Make a connection to the HTML container defined in the HTML div
+    var container = document.getElementById("grid_container"); // This container connects to the HTML div
+
+    // 2. Define a JavaScript object for our http source and our data rows for coding languages
+    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
+    var earth_pictures = [
+        {"picture": "0/00/Earth_from_space.jpg", "description": "Earth from Space"},
+        {"picture": "9/97/The_Earth_seen_from_Apollo_17.jpg", "description": "Earth from Apollo 17"},
+        {"picture": "e/e0/AS08-14-2383.jpg", "description": "Earth from Moon"},
+    ];
+
+    // 3b. Build grid items inside of our container for each row of data
+    for (const language of earth_pictures) {
+        // Create a "div" with "class grid-item" for each row
+        var gridItem = document.createElement("div");
+        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
+        // Add "img" HTML tag for the logo
+        var img = document.createElement("img");
+        img.src = http_source + language.picture; // concatenate the source and logo
+        img.alt = language.description + " Picture"; // add alt text for accessibility
+
+        // Add "p" HTML tag for the description
+        var description = document.createElement("p");
+        description.textContent = language.description; // extract the description
+
+        // Append img and p HTML tags to the grid item DIV
+        gridItem.appendChild(img);
+        gridItem.appendChild(description);
+
+        // Append the grid item DIV to the container DIV
+        container.appendChild(gridItem);
+    }
+</script>
+<p> </p>
+<comment>
+Pictures are made using Wikipedia images.
+</comment>
+
+<p> </p>
+<p> </p>
 
 <table>
     <tr>
-        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks" alt=""></td>
+        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks and Hacks" alt=""></td>
         <td><a href="{{site.baseurl}}/github/pages/planning-and-emoji">Planning and Emoji Notebook</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/frontend-hacks">Frontend Hacks</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/sass-hacks">SASS Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/brazil">Brazil Guide</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/calculator">JS Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/italy">Italy Guide</a></td>
     </tr>
 </table>
+
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
