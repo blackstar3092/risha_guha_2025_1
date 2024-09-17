@@ -28,6 +28,74 @@ hide: true
 
 </div>
 
+<style>
+  /* Ensure the 'Games' button is a big rounded square with a purple background */
+  .games-menu {
+    display: inline-block;
+    background-color: #05034b !important; /* Blue background */
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white !important; /* Text color */
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Dropdown menu container */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #05034b !important; /* Blue background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* Dropdown menu links */
+  .dropdown-menu a {
+    display: block;
+    color: white !important; /* Text color */
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* Dropdown menu link hover effect */
+  .dropdown-menu a:hover {
+    background-color: white !important; /* Hover background color */
+    color: black !important; /* Hover text color */
+  }
+
+  /* Show dropdown menu when 'Games' button is clicked */
+  .games-menu.active + .dropdown-menu {
+    display: block;
+  }
+</style>
+
+<!-- Add this HTML to your index.md file where you want the menu to appear -->
+<div class="dropdown">
+  <a href="#" class="games-menu">Games</a>
+  <div class="dropdown-menu">
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/calculator">Calculator</a>
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/binary-calculator">Binary Calculator</a>    
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/cookie-clicker">Cookie Clicker Game</a>
+  </div>
+</div>
+
+<script>
+  // Toggle dropdown menu visibility
+  document.querySelector('.games-menu').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.classList.toggle('active');
+  });
+</script>
+
+
 <p> </p>
 <style>
     .grid-container {
@@ -115,11 +183,9 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/github/pages/frontend-hacks">Frontend Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/sass-hacks">SASS Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/brazil">Brazil Guide</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/calculator">JS Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/italy">Italy Guide</a></td>
     </tr>
 </table>
-
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"

@@ -1,0 +1,77 @@
+/* define class for redefined button */
+.calc-button, .calculator-number, .calculator-operation {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: lightseagreen;
+  border: 3px solid black;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 1;
+  grid-row: span 1;
+  transition: all 0.5s;
+}
+.calc-button:hover, .calculator-number:hover, .calculator-operation:hover {
+  background-color: darkslateblue;
+}
+
+/* class to create the calculator's container; uses CSS grid display to partition off buttons */
+.calculator-container {
+  width: 90vw; /* this width and height is specified for mobile devices by default */
+  height: 80vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/ */
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  gap: 10px 10px;
+}
+
+@media (min-width: 600px) {
+  .calculator-container {
+    width: 40vw;
+    height: 80vh;
+  }
+}
+/* styling for the calculator operation button */
+/* styling for the calculator number button */
+/* styling for the calculator clear button */
+.calculator-clear {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: orange;
+  border: 3px solid black;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 1;
+  grid-row: span 1;
+  transition: all 0.5s;
+}
+.calculator-clear:hover {
+  background-color: darkorange;
+}
+
+/* styling for the calculator equals button */
+.calculator-equals {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: red;
+  border: 3px solid black;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 1;
+  grid-row: span 1;
+  transition: all 0.5s;
+}
+.calculator-equals:hover {
+  background-color: darkred;
+}
+
+/*# sourceMappingURL=_main.css.map */
