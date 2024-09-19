@@ -220,3 +220,14 @@ type: tangibles
 
 
 </script>
+
+
+<h2> SASS Hacks Writeup</h2>
+
+<p> The _mixins.scss file is a CSS processor, a part of the Syntacticaly Awesome Style Sheets. Mixins are reusable chunks of CSS code that are similar to functions in programming; they define a certain set of styles that can be called upon by other stylesheets or HTML files. The underscore represents that the mixins stylesheet can not be compiled by itself; it will be included in a larger sheet as it is only a partial stylesheet. 
+
+<h3 style="color: 34c0eb;"> Code Explanation </h3>
+
+<p> The following code is a CSS class definition. It defines a mixin named <code>button<code>. The <code>@include</code> is used to reference a mixin (<code>button</code>) that is defined elsewhere. The common styles of <code>button</code> will be applied to the <code>.calc-button</code> class.
+
+This mixin is referenced in the stylesheets used to code this calculator, as well as in the code for the calculator on this .md page. The button is also reused in the binary calculator, making using the style sheet an effective way to code this element of the site.

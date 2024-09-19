@@ -1,7 +1,6 @@
 ---
 layout: post 
 title: Cookie Clicker
-search_exclude: true
 description: JavaScript Cookie Clicker
 permalink: /javascript/project/cookie-clicker
 type: tangibles

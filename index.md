@@ -29,7 +29,7 @@ hide: true
 </div>
 
 <style>
-  /* Ensure the 'Games' button is a big rounded square with a purple background */
+  /* Ensure the 'Games' button is a big rounded square with a blue background */
   .games-menu {
     display: inline-block;
     background-color: #05034b !important; /* Blue background */
@@ -79,11 +79,13 @@ hide: true
 
 <!-- Add this HTML to your index.md file where you want the menu to appear -->
 <div class="dropdown">
-  <a href="#" class="games-menu">Games</a>
+  <a href="#" class="games-menu">SASS Hacks and JavaScript Project Playground</a>
   <div class="dropdown-menu">
-    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/calculator">Calculator</a>
-    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/binary-calculator">Binary Calculator</a>    
-    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/projects/cookie-clicker">Cookie Clicker Game</a>
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/calculator">Calculator</a>
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/binary-calculator">Binary Calculator</a>    
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/cookie-clicker">Cookie Clicker Game</a>
+    <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/snake">Snake Game</a>
+
   </div>
 </div>
 

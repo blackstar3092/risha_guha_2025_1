@@ -72,3 +72,41 @@ Prior to setting up my tools for this class, I already had experience with Githu
 
 While installing ruby, I was met with an error regarding permissions. However, running the venv environment as administrator and reinstalling solved the problem.
 
+### Javascript DOM Hack
+
+<div style="background-color: #05034b;">
+    <a id="aboutLink" href="/risha_guha_2025_1/about/">
+        <button class="block"><b>About Page</b></button>
+    </a>
+    <p></p>
+    <a id="indexLink" href="/risha_guha_2025_1/">
+        <button class="block"><b>Index Page</b></button>
+    </a>
+    <p></p>
+    <p style="color: white;">Use the buttons above to navigate to important pages on this site.</p>
+    <p style="color: white;" id="switchedParagraph">Not Switched Yet!</p>
+    <button class="block" id="switchLinks"><b>Switch!</b></button>
+
+</div>
+
+<script>
+    const aboutLink = document.getElementById("aboutLink");
+    const indexLink = document.getElementById("indexLink");
+    const switchedText = document.getElementById("switchedParagraph");
+    const switchButton = document.getElementById("switchLinks");
+
+    const switchLinks = () => {
+        // Swap the hrefs of the links
+        const aboutHref = aboutLink.href;
+        const indexHref = indexLink.href;
+
+        aboutLink.href = indexHref;
+        indexLink.href = aboutHref;
+
+        // Change the text of the paragraph
+        switchedText.textContent = "Switched!";
+    };
+
+    // Add an event listener to the "Switch!" button
+    switchButton.addEventListener("click", switchLinks);
+</script>
