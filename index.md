@@ -188,6 +188,13 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/github/pages/italy">Italy Guide</a></td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Homework and Popcorn Hacks Sprint 2" alt=""></td>
+        <td><a href="{{site.baseurl}}/github/pages/hacks_3-3">3.3 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/hacks_3-5">3.5 Hacks</a></td>
+    </tr>
+</table>
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
