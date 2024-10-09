@@ -191,7 +191,9 @@ Pictures are made using Wikipedia images.
 <table>
     <tr>
         <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Homework and Popcorn Hacks Sprint 2" alt=""></td>
+        <td><a href="{{site.baseurl}}/github/pages/hacks_3-1">3.1 Hacks</a></td>
         <td><a href="{{site.baseurl}}/github/pages/hacks_3-3">3.3 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/github/pages/hacks_3-4">3.4 Hacks</a></td>        
         <td><a href="{{site.baseurl}}/github/pages/hacks_3-5">3.5 Hacks</a></td>
     </tr>
 </table>
