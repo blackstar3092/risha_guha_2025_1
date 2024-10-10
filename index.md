@@ -199,7 +199,6 @@ Pictures are made using Wikipedia images.
     </tr>
 </table>
 
-
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
         issue-term="pathname"
