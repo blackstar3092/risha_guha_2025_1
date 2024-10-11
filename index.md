@@ -181,18 +181,21 @@ Pictures are made using Wikipedia images.
 <table>
     <tr>
         <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks and Hacks" alt=""></td>
-        <td><a href="{{site.baseurl}}/github/pages/planning-and-emoji">Planning and Emoji Notebook</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/frontend-hacks">Frontend Hacks</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/sass-hacks">SASS Hacks</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/brazil">Brazil Guide</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/italy">Italy Guide</a></td>
-    </tr>
+        <td><a href="{{site.baseurl}}/sprint/1/planning-and-emoji">Planning and Emoji Notebook</a></td>
+        <td><a href="{{site.baseurl}}/sprint/1/frontend-hacks">Frontend Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/1/sass-hacks">SASS Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/1/brazil">Brazil Guide</a></td>
+        <td><a href="{{site.baseurl}}/sprint/1/italy">Italy Guide</a></td>
+   </tr>
 </table>
+
 <table>
     <tr>
-        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Homework and Popcorn Hacks Sprint 2" alt=""></td>
-        <td><a href="{{site.baseurl}}/github/pages/hacks_3-3">3.3 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/github/pages/hacks_3-5">3.5 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.1 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-3">3.3 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-4">3.4 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-5">3.5 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></td>
     </tr>
 </table>
 
