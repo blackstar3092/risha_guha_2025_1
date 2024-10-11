@@ -192,13 +192,13 @@ Pictures are made using Wikipedia images.
 <table>
     <tr>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.1 Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.2 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-3">3.3 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-4">3.4 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-5">3.5 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></td>
     </tr>
 </table>
-
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
         issue-term="pathname"
