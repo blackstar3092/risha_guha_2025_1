@@ -203,7 +203,7 @@ Pictures are made using Wikipedia images.
     </tr>
 </table>
 
-<a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a></td>
+<a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a>
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
