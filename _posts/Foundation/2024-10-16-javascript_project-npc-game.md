@@ -1,5 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: NPC Game
+layout: post
+description: A Game Made Using Sprint 2 Skills
+categories: [Javascript]
+permalink: /javascript/project/npc-game
+menu: nav/javascript_project.html
+toc: true
+comments: false
+---
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
