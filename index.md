@@ -199,9 +199,11 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10a">3.10a Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10b">3.10b Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Learnings Blog</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Personal Learnings Blog</a></td>
     </tr>
 </table>
+
+<a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a></td>
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
