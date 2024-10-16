@@ -85,7 +85,7 @@ hide: true
     <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/binary-calculator">Binary Calculator</a>    
     <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/cookie-clicker">Cookie Clicker Game</a>
     <a href="https://blackstar3092.github.io/risha_guha_2025_1/javascript/project/snake">Snake Game</a>
-
+    <a href="{{site.baseurl}}/javascript/project/npc-game">SPRINT 2: NPC Game</a>
   </div>
 </div>
 
@@ -199,9 +199,10 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10a">3.10a Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10b">3.10b Hacks</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Learnings Blog</a></td>
     </tr>
 </table>
-s
+
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
         issue-term="pathname"
