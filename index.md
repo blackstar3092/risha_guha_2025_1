@@ -201,6 +201,7 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10a">3.10a Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10b">3.10b Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Personal Learnings Blog</a></td>
+        <td><a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a></td>
     </tr>
 </table>
 
