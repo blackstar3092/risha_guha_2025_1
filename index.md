@@ -186,6 +186,7 @@ Pictures are made using Wikipedia images.
         <td><a href="{{site.baseurl}}/sprint/1/sass-hacks">SASS Hacks</a></td>
         <td><a href="{{site.baseurl}}/sprint/1/brazil">Brazil Guide</a></td>
         <td><a href="{{site.baseurl}}/sprint/1/italy">Italy Guide</a></td>
+        <td><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Blog</a></td>
    </tr>
 </table>
 
@@ -203,7 +204,14 @@ Pictures are made using Wikipedia images.
     </tr>
 </table>
 
-<a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a>
+<table>
+    <tr>
+        <td><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Learnings Blog</a></td>
+        <td><a href="{{site.baseurl}}/sprint/3/teamplan">Sprint 3 Team Plan</a></td>
+        <td><a href="{{site.baseurl}}/sprint/3/natm">Sprint 3 NATM Presentation</a></td>
+        <td><a href="{{site.baseurl}}/sprint/3/review">Tri 1-3 Review Ticket</a></td>
+    </tr>
+</table>
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
