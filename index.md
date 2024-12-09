@@ -215,6 +215,13 @@ Pictures are made using Wikipedia images.
     </tr>
 </table>
 
+<table>
+    <tr>
+        <td><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></td>
+        <td><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></td>
+    </tr>
+</table>
+
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
         issue-term="pathname"
