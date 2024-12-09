@@ -178,49 +178,52 @@ Pictures are made using Wikipedia images.
 <p> </p>
 <p> </p>
 
-<table>
-    <tr>
-        <td><img src="{{site.baseurl}}/images/cslogo.jpg" height="60" title="Notebooks and Hacks" alt=""></td>
-        <td><a href="{{site.baseurl}}/sprint/1/planning-and-emoji">Planning and Emoji Notebook</a></td>
-        <td><a href="{{site.baseurl}}/sprint/1/frontend-hacks">Frontend Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/1/sass-hacks">SASS Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/1/brazil">Brazil Guide</a></td>
-        <td><a href="{{site.baseurl}}/sprint/1/italy">Italy Guide</a></td>
-        <td><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Blog</a></td>
-   </tr>
-</table>
+<details>
+    <summary>Notebooks and Hacks</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/1/planning-and-emoji">Planning and Emoji Notebook</a></li>
+        <li><a href="{{site.baseurl}}/sprint/1/frontend-hacks">Frontend Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/1/sass-hacks">SASS Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/1/brazil">Brazil Guide</a></li>
+        <li><a href="{{site.baseurl}}/sprint/1/italy">Italy Guide</a></li>
+        <li><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Blog</a></li>
+    </ul>
+</details>
 
-<table>
-    <tr>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.1 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.2 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-3">3.3 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-4">3.4 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-5">3.5 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10a">3.10a Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/hacks_3-10b">3.10b Hacks</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Personal Learnings Blog</a></td>
-        <td><a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a></td>
-    </tr>
-</table>
+<details>
+    <summary>Sprint 2 Hacks and Blogs</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.1 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-2">3.2 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-3">3.3 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-4">3.4 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-5">3.5 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-8">3.8 Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-10a">3.10a Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/hacks_3-10b">3.10b Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/blog">Sprint 2 Personal Learnings Blog</a></li>
+        <li><a href="{{site.baseurl}}/sprint/2/team-blog">Sprint 2 Team Blog</a></li>
+    </ul>
+</details>
 
-<table>
-    <tr>
-        <td><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Learnings Blog</a></td>
-        <td><a href="{{site.baseurl}}/sprint/3/teamplan">Sprint 3 Team Plan</a></td>
-        <td><a href="{{site.baseurl}}/sprint/3/natm">Sprint 3 NATM Presentation</a></td>
-        <td><a href="{{site.baseurl}}/sprint/3/review">Tri 1-3 Review Ticket</a></td>
-        <td><a href="{{site.baseurl}}/sprint/3/mc">2018 College Board MC</a></td>
-    </tr>
-</table>
+<details>
+    <summary>Sprint 3 Projects and Reviews</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Learnings Blog</a></li>
+        <li><a href="{{site.baseurl}}/sprint/3/teamplan">Sprint 3 Team Plan</a></li>
+        <li><a href="{{site.baseurl}}/sprint/3/natm">Sprint 3 NATM Presentation</a></li>
+        <li><a href="{{site.baseurl}}/sprint/3/review">Tri 1-3 Review Ticket</a></li>
+        <li><a href="{{site.baseurl}}/sprint/3/mc">2018 College Board MC</a></li>
+    </ul>
+</details>
 
-<table>
-    <tr>
-        <td><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></td>
-        <td><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></td>
-    </tr>
-</table>
+<details>
+    <summary>Sprint 4 Tech Talks</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
+    </ul>
+</details>
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
