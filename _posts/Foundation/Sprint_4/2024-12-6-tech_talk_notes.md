@@ -45,3 +45,10 @@ menu: nav/sprint_4.html
 ## Homework:
 - Make static API that returns from real webserver (minimally)
 - - Move it to the backend and return data 
+
+
+
+### Successes So Far
+
+- Linking of frontend and backend post systems
+- Fetching data from About for student API
