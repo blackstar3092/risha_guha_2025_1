@@ -222,6 +222,12 @@ Pictures are made using Wikipedia images.
     <ul>
         <li><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></li>
         <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/tech-talk-2">Sprint 5 Tech Talk Notes</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/sqlalchemy">SQLAlchemy Code</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/sqlconnect">SQLConnect Code</a></li>
+        <li><a href="{{site.baseurl}}/sprint/4/cs-panel">GiCS Panel Notes</a></li>
     </ul>
 </details>
 
