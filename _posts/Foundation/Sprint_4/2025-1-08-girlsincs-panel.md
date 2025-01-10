@@ -11,7 +11,12 @@ menu: nav/sprint_4.html
 
 ## Personal Connections:
 
-Through this panel, I learned about the various applications of computer science in different STEM majors, and I found the panelists' 
+Through this panel, I learned about the various applications of computer science in different STEM majors, and I found the panelists' perspectives of how CS classes have impacted their lives to be fascinating.
+I now know a lot more about the college application process, as well as how to write successful applications and how to explain all of the projects I have created in a portfolio website of my choosing.
+I also am inspired to create my own portfolio using my Computer Science Principles projects so far, as well as reach out to other institutes regarding ways to create new and cutting-edge programs.
+Finally, I learned about flowcharts and Draw.io and considered how to incorporate them into future Kanban planning and website schematics.
+
+<img src="{{site.baseurl}}/images/girls_in_cs_blog.JPG">
 
 ### Why caused you to pursue CS?
 
