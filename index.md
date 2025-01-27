@@ -224,12 +224,19 @@ Pictures are made using Wikipedia images.
         <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
         <li><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></li>
         <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
-        <li><a href="{{site.baseurl}}/sprint/4/tech-talk-2">Sprint 5 Tech Talk Notes</a></li>
-        <li><a href="{{site.baseurl}}/sprint/4/sqlalchemy">SQLAlchemy Code</a></li>
-        <li><a href="{{site.baseurl}}/sprint/4/sqlconnect">SQLConnect Code</a></li>
         <li><a href="{{site.baseurl}}/sprint/4/cs-panel">GiCS Panel Notes</a></li>
     </ul>
 </details>
+
+<details>
+    <summary>Sprint 5 Tech Talks</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/5/tech-talk-3">Sprint 5 Tech Talk Notes</a></li>
+        <li><a href="{{site.baseurl}}/sprint/5/sqlalchemy">SQLAlchemy Code</a></li>
+        <li><a href="{{site.baseurl}}/sprint/5/sqlconnect">SQLConnect Code</a></li>
+    </ul>
+</details>
+    
 
 <script src="https://utteranc.es/client.js"
         repo="blackstar3092/risha_guha_2025_1"
