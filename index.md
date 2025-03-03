@@ -237,6 +237,7 @@ Pictures are made using Wikipedia images.
         <li><a href="{{site.baseurl}}/sprint/5/tech-talk-3">API Tech Talk 2 Notes</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/CRUD_review">Sprint 5 CRUD Review</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/bigidea4">Big Idea 4 Learnings</a></li>
+        <li><a href="{{site.baseurl}}/sprint/5/final">Final Exam Blog</a></li>
     </ul>
 </details>
     
