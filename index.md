@@ -5,6 +5,7 @@ description: Home Page
 hide: true
 ---
 
+
 <img src="{{site.baseurl}}/images/apcompscihome.png">
 
 
@@ -97,101 +98,22 @@ hide: true
   });
 </script>
 
-
-<p> </p>
-<style>
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
-        gap: 10px;
-    }
-    .grid-item {
-        text-align: center;
-    }
-    .grid-item img {
-        width: 100%;
-        height: 100px; /* Fixed height for uniformity */
-        object-fit: contain; /* Ensure the image fits within the fixed height */
-    }
-    .grid-item p {
-        margin: 5px 0; /* Add some margin for spacing */
-    }
-
-    .image-gallery {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 10px;
-    }
-
-    .image-gallery img {
-        max-height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-</style>
-
-<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
-<div class="grid-container" id="grid_container">
-    <!-- content will be added here by JavaScript -->
-</div>
-
-<script>
-    // 1. Make a connection to the HTML container defined in the HTML div
-    var container = document.getElementById("grid_container"); // This container connects to the HTML div
-
-    // 2. Define a JavaScript object for our http source and our data rows for coding languages
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var earth_pictures = [
-        {"picture": "0/00/Earth_from_space.jpg", "description": "Earth from Space"},
-        {"picture": "9/97/The_Earth_seen_from_Apollo_17.jpg", "description": "Earth from Apollo 17"},
-        {"picture": "e/e0/AS08-14-2383.jpg", "description": "Earth from Moon"},
-    ];
-
-    // 3b. Build grid items inside of our container for each row of data
-    for (const language of earth_pictures) {
-        // Create a "div" with "class grid-item" for each row
-        var gridItem = document.createElement("div");
-        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
-        // Add "img" HTML tag for the logo
-        var img = document.createElement("img");
-        img.src = http_source + language.picture; // concatenate the source and logo
-        img.alt = language.description + " Picture"; // add alt text for accessibility
-
-        // Add "p" HTML tag for the description
-        var description = document.createElement("p");
-        description.textContent = language.description; // extract the description
-
-        // Append img and p HTML tags to the grid item DIV
-        gridItem.appendChild(img);
-        gridItem.appendChild(description);
-
-        // Append the grid item DIV to the container DIV
-        container.appendChild(gridItem);
-    }
-</script>
-<p> </p>
-<comment>
-Pictures are made using Wikipedia images.
-</comment>
-
 <p> </p>
 <p> </p>
 
 <details>
-    <summary>Notebooks and Hacks</summary>
+    <summary>Sprint 1</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/1/planning-and-emoji">Planning and Emoji Notebook</a></li>
         <li><a href="{{site.baseurl}}/sprint/1/frontend-hacks">Frontend Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/1/sass-hacks">SASS Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/1/brazil">Brazil Guide</a></li>
         <li><a href="{{site.baseurl}}/sprint/1/italy">Italy Guide</a></li>
-        <li><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Blog</a></li>
     </ul>
 </details>
 
 <details>
-    <summary>Sprint 2 Hacks and Blogs</summary>
+    <summary>Sprint 2</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/2/hacks_3-1">3.1 Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/2/hacks_3-2">3.2 Hacks</a></li>
@@ -207,7 +129,7 @@ Pictures are made using Wikipedia images.
 </details>
 
 <details>
-    <summary>Sprint 3 Projects and Reviews</summary>
+    <summary>Sprint 3</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/3/blog">Sprint 3 Personal Learnings Blog</a></li>
         <li><a href="{{site.baseurl}}/sprint/3/teamplan">Sprint 3 Team Plan</a></li>
@@ -218,7 +140,7 @@ Pictures are made using Wikipedia images.
 </details>
 
 <details>
-    <summary>Sprint 4 Tech Talks</summary>
+    <summary>Sprint 4</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/4/tech-talk">Sprint 4 Tech Talk Notes</a></li>
         <li><a href="{{site.baseurl}}/sprint/4/flask-intro">Flask and Python Web Server Dev Intro</a></li>
@@ -229,7 +151,7 @@ Pictures are made using Wikipedia images.
 </details>
 
 <details>
-    <summary>Sprint 5 Tech Talks</summary>
+    <summary>Sprint 5</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/5/tech-talk-3">Sprint 5 Tech Talk Notes</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/sqlalchemy">SQLAlchemy Code</a></li>
@@ -238,6 +160,7 @@ Pictures are made using Wikipedia images.
         <li><a href="{{site.baseurl}}/sprint/5/CRUD_review">Sprint 5 CRUD Review</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/bigidea4">Big Idea 4 Learnings</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/final">Final Exam Blog</a></li>
+        <li><a href="{{site.baseurl}}/sprint/5/finalmc">2020 MC Review</a><li>
     </ul>
 </details>
     
