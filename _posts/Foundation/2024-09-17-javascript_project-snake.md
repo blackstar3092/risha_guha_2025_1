@@ -6,407 +6,698 @@ permalink: /javascript/project/snake
 type: tangibles
 ---
 
-<!-- Inside the <style> tag in your HTML -->
 <style>
-   
-    .wrap {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  /* Overall page layout */
 
-    canvas {
-        display: none;
-        border-style: solid;
-        border-width: 30px;
-        border-color: #FFFFFF;
-    }
+  /* Title */
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 
-    canvas:focus {
-        outline: none;
-    }
+  /* Container for game canvas */
+  .game-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Stretch across the page horizontally */
+    max-width: 800px; /* Limit max width of the canvas */
+    margin: 0 auto;
+  }
 
-    /* Header Style */
-    header {
-        text-align: center;
-        padding: 10px;
-    }
+  /* The canvas itself */
+  #gameCanvas {
+    border: 3px solid #cfffe3; /* Same color as snake body */
+    display: block;
+    filter: none;
+  }
 
-    header p {
-        color: #000000; /* Text color for the header */
-        font-size: 24px;
-    }
+  /* Container for controls */
+  .controls-container {
+    text-align: center;
+    margin-top: 20px;
+  }
 
-    /* All screens style */
-    #gameover p, #setting p, #menu p {
-        font-size: 20px;
-        background-color: #ba93fa; /* Add this line to set the background color of the text */
-    }
+  /* Controls for settings */
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
 
-    #gameover a, #setting a, #menu a {
-        font-size: 30px;
-        display: block;
-        background-color: #ba93fa; /* Add this line to set the background color of the text */
-    }
+  /* Styling for the score display */
+  .score {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 
-    #gameover a:hover, #setting a:hover, #menu a:hover {
-        cursor: pointer;
-    }
+  /* Button styling */
+  button {
+    font-size: 14px;
+    cursor: pointer;
+  }
 
-    #gameover a:hover::before, #setting a:hover::before, #menu a:hover::before {
-        content: ">";
-        margin-right: 10px;
-    }
+  #startButton {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    #menu {
-        display: block;
-    }
+  /* Disabled button state */
+  button:disabled {
+    cursor: not-allowed;
+  }
+  /* Retro blue style for buttons */
+button {
+  background-color: #1E90FF; /* Dodger Blue */
+  border: 2px solid #4682B4; /* Steel Blue */
+  color: #FFFFFF; /* White text */
+  font-family: 'Press Start 2P', cursive; /* Pixelated retro font */
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Retro shadow effect */
+  transition: all 0.2s ease-in-out;
+}
 
-    #gameover {
-        display: none;
-    }
+button:hover {
+  background-color: #00BFFF; /* Deep Sky Blue */
+  border-color: #00FFFF; /* Aqua border on hover */
+  box-shadow: 0 0 15px #00BFFF; /* Glow effect */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
 
-    #setting {
-        display: none;
-    }
+button:active {
+  background-color: #4682B4; /* Steel Blue for pressed effect */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle pressed shadow */
+  transform: scale(0.95); /* Pressed-down effect */
+}
 
-    #setting input {
-        display: none;
-    }
+/* Optional: Disabled button styling */
+button:disabled {
+  background-color: #7F9FAF; /* Muted blue for disabled */
+  color: #CCCCCC; /* Muted text */
+  border-color: #5A738E; /* Muted border */
+  cursor: not-allowed;
+  box-shadow: none;
+}
 
-    #setting label {
-        cursor: pointer;
-    }
+  .high-score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    color: #aaa;
+  }
+/* Popup container styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-    #setting input:checked + label {
-        background-color: #FFF;
-        color: #000;
-    }
+/* Popup content box styling */
+.popup .content {
+  background-color: black; /* Retro black background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 255, 0, 0.7), 0px 0px 10px rgba(0, 255, 0, 0.5); /* Green glow and underlay */
+  font-family: 'Press Start 2P', sans-serif; /* Retro pixel font */
+  color: #00FF00; /* Neon green text */
+  text-transform: uppercase; /* Capitalized retro text */
+  position: relative;
+}
+
+/* List items styling */
+.popup .content ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.popup .content ul li {
+  margin: 10px 0;
+  color: #00FF00; /* Neon green for list items */
+  font-size: 14px;
+}
+
+/* Close button default styling */
+.popup .close-button {
+  background-color: #00FF00; /* Neon green background */
+  color: black; /* Black text for retro feel */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: 'Press Start 2P', sans-serif; /* Retro font for button */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+/* Close button active styling */
+.popup .close-button:active {
+  background-color: black; /* Turn background black */
+  color: #00FF00; /* Neon green text */
+}
+
+/* Close button hover styling */
+.popup .close-button:hover {
+  background-color: #00CC00; /* Slightly darker green on hover */
+}
+/* Retro blue style for dropdown menus */
+select {
+  background-color: #1E90FF; /* Dodger Blue */
+  border: 2px solid #4682B4; /* Steel Blue */
+  color: #FFFFFF; /* White text */
+  font-family: 'Press Start 2P', cursive; /* Pixelated retro font */
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Retro shadow effect */
+}
+
+select:focus {
+  outline: none;
+  border-color: #00BFFF; /* Deep Sky Blue */
+  box-shadow: 0 0 10px #00BFFF; /* Glow effect */
+}
+
+/* Retro blue style for the score */
+#score {
+  color: #00FFFF; /* Aqua */
+  font-family: 'Press Start 2P', cursive; /* Pixelated retro font */
+  font-size: 20px;
+  background: linear-gradient(to right, #1E90FF, #4682B4); /* Gradient background */
+  padding: 10px 20px;
+  border: 3px solid #4682B4; /* Steel Blue border */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 255, 0.4); /* Retro glow effect */
+}
+
+/* Add retro styling to the dropdown container */
+.dropdown-container {
+  margin: 20px;
+  padding: 10px;
+  background: #000080; /* Navy Blue background */
+  border: 3px solid #4682B4;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 139, 0.5); /* Dark blue shadow */
+}
 </style>
+<audio id="game-music" src="game-music.mp3" loop></audio>
 
-
-
-<div class="container">
-    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-        <p class="fs-4">Snake score: <span id="score_value">0</span></p>
-    </header>
-    <div class="container bg-secondary" style="text-align:center;">
-        <!-- Main Menu -->
-        <div id="menu" class="py-4 text-light">
-            <p>Welcome to Snake, press space to begin</p>
-            <a id="new_game" class="link-alert">new game</a>
-            <a id="setting_menu" class="link-alert">settings</a>
-        </div>
-        <!-- Game Over -->
-     <div id="gameover" class="py-4 text-light">
-        <div id="game-over-overlay" style="text-align: center;">
-            <p id="game-over-text" style="font-size: 36px; color: black; background-color: 061378;">Game Over</p>
-            <p style="font-size: 20px; color: black;">Get better next time! 😞</p>
-        </div>
-        <a id="new_game1" class="link-alert">new game</a>
-        <a id="setting_menu1" class="link-alert">settings</a>
-     </div>
-        <!-- Play Screen -->
-        <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
-        <!-- Settings Screen -->
-        <div id="setting" class="py-4 text-light">
-            <p>Settings Screen, press <span style="background-color: #FFFFFF; color: #000000">space</span> to go back to playing</p>
-            <a id="new_game2" class="link-alert">new game</a>
-            <br>
-            <p>Speed:
-                <input id="speed1" type="radio" name="speed" value="120" checked/>
-                <label for="speed1">Slow</label>
-                <input id="speed2" type="radio" name="speed" value="75"/>
-                <label for="speed2">Normal</label>
-                <input id="speed3" type="radio" name="speed" value="35"/>
-                <label for="speed3">Fast</label>
-                <input id="speed4" type="radio" name="speed" value="15"/>
-                <label for="speed4">SuperFast</label>
-            </p>
-            <p>Wall:
-                <input id="wallon" type="radio" name="wall" value="1" checked/>
-                <label for="wallon">On</label>
-                <input id="walloff" type="radio" name="wall" value="0"/>
-                <label for="walloff">Off</label>
-            </p>
-        </div>
-    </div>
+<div id="rules-popup" class="popup">
+  <div class="content">
+    <h1>Snake Game Rules</h1>
+    <p>Welcome to Snake! Here are the basic rules:</p>
+    <ul>
+      <li>Use the arrow keys (Up, Down, Left, Right) to control the snake's movement.</li>
+      <li>Eat the food (apple or pizza) to grow and score points.</li>
+      <li>Avoid hitting the walls (if enabled) or your own body.</li>
+      <li>The game ends when you hit a wall, your own body, or run out of time.</li>
+      <li>Higher difficulty modes (Frenzy) introduce additional challenges.</li>
+      <li>Use the settings to adjust walls, speed, and background.</li>
+    </ul>
+    <button class="close-button" onclick="closePopup()">Close</button>
+  </div>
 </div>
-
 <script>
-    (function(){
-        /* Attributes of Game */
-        /////////////////////////////////////////////////////////////
-        // Canvas & Context
-        const canvas = document.getElementById("snake");
-        const ctx = canvas.getContext("2d");
-        // HTML Game IDs
-        const SCREEN_SNAKE = 0;
-        const screen_snake = document.getElementById("snake");
-        const ele_score = document.getElementById("score_value");
-        const speed_setting = document.getElementsByName("speed");
-        const wall_setting = document.getElementsByName("wall");
-        // HTML Screen IDs (div)
-        const SCREEN_MENU = -1, SCREEN_GAME_OVER=1, SCREEN_SETTING=2;
-        const screen_menu = document.getElementById("menu");
-        const screen_game_over = document.getElementById("gameover");
-        const screen_setting = document.getElementById("setting");
-        // HTML Event IDs (a tags)
-        const button_new_game = document.getElementById("new_game");
-        const button_new_game1 = document.getElementById("new_game1");
-        const button_new_game2 = document.getElementById("new_game2");
-        const button_setting_menu = document.getElementById("setting_menu");
-        const button_setting_menu1 = document.getElementById("setting_menu1");
-        // Game Control
-        const BLOCK = 10;   // size of block rendering
-        let SCREEN = SCREEN_MENU;
-        let snake;
-        let snake_dir;
-        let snake_next_dir;
-        let snake_speed;
-        let food = {x: 0, y: 0};
-        let score;
-        let wall;
-        /* Display Control */
-        /////////////////////////////////////////////////////////////
-        // 0 for the game
-        // 1 for the main menu
-        // 2 for the settings screen
-        // 3 for the game over screen
-        let showScreen = function(screen_opt){
-            SCREEN = screen_opt;
-            switch(screen_opt){
-                case SCREEN_SNAKE:
-                    screen_snake.style.display = "block";
-                    screen_menu.style.display = "none";
-                    screen_setting.style.display = "none";
-                    screen_game_over.style.display = "none";
-                    break;
-                case SCREEN_GAME_OVER:
-                    screen_snake.style.display = "block";
-                    screen_menu.style.display = "none";
-                    screen_setting.style.display = "none";
-                    screen_game_over.style.display = "block";
-                    break;
-                case SCREEN_SETTING:
-                    screen_snake.style.display = "none";
-                    screen_menu.style.display = "none";
-                    screen_setting.style.display = "block";
-                    screen_game_over.style.display = "none";
-                    break;
-            }
-        }
-        /* Actions and Events  */
-        /////////////////////////////////////////////////////////////
-        window.onload = function(){
-            // HTML Events to Functions
-            button_new_game.onclick = function(){newGame();};
-            button_new_game1.onclick = function(){newGame();};
-            button_new_game2.onclick = function(){newGame();};
-            button_setting_menu.onclick = function(){showScreen(SCREEN_SETTING);};
-            button_setting_menu1.onclick = function(){showScreen(SCREEN_SETTING);};
-            // Prevent default arrow key behavior
-            window.addEventListener("keydown", function(evt) {
-                if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(evt.code)) {
-                    evt.preventDefault(); // Prevent default scrolling
-                }
-                // Handle spacebar detection for new game
-                if(evt.code === "Space" && SCREEN !== SCREEN_SNAKE) {
-                    newGame();
-                }
-                // Handle snake direction changes
-                changeDir(evt.keyCode);
-            }, true);
-            
-            // speed
-            setSnakeSpeed(150);
-            for(let i = 0; i < speed_setting.length; i++){
-                speed_setting[i].addEventListener("click", function(){
-                    for(let i = 0; i < speed_setting.length; i++){
-                        if(speed_setting[i].checked){
-                            setSnakeSpeed(speed_setting[i].value);
-                        }
-                    }
-                });
-            }
-            // wall setting
-            setWall(1);
-            for(let i = 0; i < wall_setting.length; i++){
-                wall_setting[i].addEventListener("click", function(){
-                    for(let i = 0; i < wall_setting.length; i++){
-                        if(wall_setting[i].checked){
-                            setWall(wall_setting[i].value);
-                        }
-                    }
-                });
-            }
-            // activate window events
-            window.addEventListener("keydown", function(evt) {
-                // spacebar detected
-                if(evt.code === "Space" && SCREEN !== SCREEN_SNAKE)
-                    newGame();
-            }, true);
-        }
-        /* Snake is on the Go (Driver Function)  */
-        /////////////////////////////////////////////////////////////
-        let mainLoop = function(){
-            let _x = snake[0].x;
-            let _y = snake[0].y;
-            snake_dir = snake_next_dir;   // read async event key
-            // Direction 0 - Up, 1 - Right, 2 - Down, 3 - Left
-            switch(snake_dir){
-                case 0: _y--; break;
-                case 1: _x++; break;
-                case 2: _y++; break;
-                case 3: _x--; break;
-            }
-            snake.pop(); // tail is removed
-            snake.unshift({x: _x, y: _y}); // head is new in new position/orientation
-            // Wall Checker
-            if(wall === 1){
-                // Wall on, Game over test
-                if (snake[0].x < 0 || snake[0].x === canvas.width / BLOCK || snake[0].y < 0 || snake[0].y === canvas.height / BLOCK){
-                    showScreen(SCREEN_GAME_OVER);
-                    return;
-                }
-            }else{
-                // Wall Off, Circle around
-                for(let i = 0, x = snake.length; i < x; i++){
-                    if(snake[i].x < 0){
-                        snake[i].x = snake[i].x + (canvas.width / BLOCK);
-                    }
-                    if(snake[i].x === canvas.width / BLOCK){
-                        snake[i].x = snake[i].x - (canvas.width / BLOCK);
-                    }
-                    if(snake[i].y < 0){
-                        snake[i].y = snake[i].y + (canvas.height / BLOCK);
-                    }
-                    if(snake[i].y === canvas.height / BLOCK){
-                        snake[i].y = snake[i].y - (canvas.height / BLOCK);
-                    }
-                }
-            }
-            // Snake vs Snake checker
-            for(let i = 1; i < snake.length; i++){
-                // Game over test
-                if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
-                    showScreen(SCREEN_GAME_OVER);
-                    return;
-                }
-            }
-            // Snake eats food checker
-            if(checkBlock(snake[0].x, snake[0].y, food.x, food.y)){
-                snake[snake.length] = {x: snake[0].x, y: snake[0].y};
-                altScore(++score);
-                addFood();
-                activeDot(food.x, food.y);
-            }
-            // Repaint canvas
-            ctx.beginPath();
-            ctx.fillStyle = "royalblue";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            // Paint snake
-            for(let i = 0; i < snake.length; i++){
-                activeDot(snake[i].x, snake[i].y);
-            }
-            // Paint food
-            activeDot(food.x, food.y);
-            // Debug
-            //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
-            // Recursive call after speed delay, déjà vu
-            setTimeout(mainLoop, snake_speed);
-        }
-        /* New Game setup */
-        /////////////////////////////////////////////////////////////
-        let newGame = function(){
-            // snake game screen
-            showScreen(SCREEN_SNAKE);
-            screen_snake.focus();
-            // game score to zero
-            score = 0;
-            altScore(score);
-            // initial snake
-            snake = [];
-            snake.push({x: 0, y: 15});
-            snake_next_dir = 1;
-            // food on canvas
-            addFood();
-            // activate canvas event
-            canvas.onkeydown = function(evt) {
-                changeDir(evt.keyCode);
-            }
-            mainLoop();
-        }
-        /* Key Inputs and Actions */
-        /////////////////////////////////////////////////////////////
-        let changeDir = function(key){
-            // test key and switch direction
-            switch(key) {
-                case 37:    // left arrow
-                    if (snake_dir !== 1)    // not right
-                        snake_next_dir = 3; // then switch left
-                    break;
-                case 38:    // up arrow
-                    if (snake_dir !== 2)    // not down
-                        snake_next_dir = 0; // then switch up
-                    break;
-                case 39:    // right arrow
-                    if (snake_dir !== 3)    // not left
-                        snake_next_dir = 1; // then switch right
-                    break;
-                case 40:    // down arrow
-                    if (snake_dir !== 0)    // not up
-                        snake_next_dir = 2; // then switch down
-                    break;
-            }
-        }
-        /* Dot for Food or Snake part */
-        /////////////////////////////////////////////////////////////
-
-        let activeDot = function(x, y){
-            ctx.fillStyle = "#FF0000";
-            const radius = BLOCK / 2; // Calculate the radius for a circle
-            const centerX = (x * BLOCK) + radius;
-            const centerY = (y * BLOCK) + radius;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-            ctx.fill();
-        }
-
-        /* Random food placement */
-        /////////////////////////////////////////////////////////////
-        let addFood = function(){
-            food.x = Math.floor(Math.random() * ((canvas.width / BLOCK) - 1));
-            food.y = Math.floor(Math.random() * ((canvas.height / BLOCK) - 1));
-            for(let i = 0; i < snake.length; i++){
-                if(checkBlock(food.x, food.y, snake[i].x, snake[i].y)){
-                    addFood();
-                }
-            }
-        }
-        /* Collision Detection */
-        /////////////////////////////////////////////////////////////
-        let checkBlock = function(x, y, _x, _y){
-            return (x === _x && y === _y);
-        }
-        /* Update Score */
-        /////////////////////////////////////////////////////////////
-        let altScore = function(score_val){
-            ele_score.innerHTML = String(score_val);
-        }
-        /////////////////////////////////////////////////////////////
-        // Change the snake speed...
-        // 150 = slow
-        // 100 = normal
-        // 50 = fast
-        let setSnakeSpeed = function(speed_value){
-            snake_speed = speed_value;
-        }
-        /////////////////////////////////////////////////////////////
-        let setWall = function(wall_value){
-            wall = wall_value;
-            if(wall === 0){screen_snake.style.borderColor = "#606060";}
-            if(wall === 1){screen_snake.style.borderColor = "#b6dbff";}
-        }
-    })();
+  // Function to close the popup
+  function closePopup() {
+    document.getElementById("rules-popup").style.display = "none";
+  }
+  // Automatically show the popup when the page loads
+  window.onload = function () {
+    document.getElementById("rules-popup").style.display = "flex";
+  };
 </script>
 
+   <h1> Snake Game</h1> <div class="high-score">Highest Score: 0</div>
+  <div class="controls-container">
+    <div class="score">Score: 0</div>
+  </div>
+  <div class="game-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </div>
+  <div class="controls-container">
+    <div class="controls">
+      <label>
+        Walls:
+        <select id="wallsToggle">
+          <option value="true">On</option>
+          <option value="false">Off</option>
+        </select>
+      </label>
+      <label>
+        Speed:
+        <select id="speedToggle">
+          <option value="slow">Slow</option>
+          <option value="medium" selected>Medium</option>
+          <option value="fast">Fast</option>
+        </select>
+      </label>
+     <label>
+      Mode:
+      <select id="modeToggle">
+        <option value="regular">Regular</option>
+        <option value="frenzy">Frenzy</option>
+      </select>
+    </label>
+      <label>
+        Background:
+        <select id="backgroundSelect">
+          <option value="space">Snake in Space</option>
+          <option value="underwater">Snake Underwater</option>
+          <option value="classic" selected>Classic</option>
+        </select>
+      </label>
+     <button id="restartButton" disabled>Restart</button>
+    </div>
+  </div>
+  <button id="startButton">Start Game</button>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreDisplay = document.querySelector('.score');
+    const wallsToggle = document.getElementById('wallsToggle');
+    const speedToggle = document.getElementById('speedToggle');
+    const restartButton = document.getElementById('restartButton');
+    const startButton = document.getElementById('startButton');
+    const backgroundSelect = document.getElementById('backgroundSelect');
+    const modeToggle = document.getElementById('modeToggle');
+    const highScoreDisplay = document.querySelector('.high-score');
+
+    const gridSize = 20;
+    const tileCount = canvas.width / gridSize;
+
+    let snake = [{ x: 10, y: 10 }];
+    let food = { x: 15, y: 15 };
+    let direction = { x: 1, y: 0 };
+    let walls = true;
+    let speed = 150;
+    let score = 0;
+    let gameLoop = null;
+    let backgroundImage = new Image();
+    let mode = 'regular'; // Regular mode by default
+    let highScore = 0;
+
+
+    const backgrounds = {
+      space: '{{site.baseurl}}/images/snake-in-space.jpg',  // Replace with actual path
+      underwater: '{{site.baseurl}}/images/snake-underwater.jpg',  // Replace with actual path
+      classic: '{{site.baseurl}}/images/classic-bkgd.png',  // Classic background is just blue
+    };
+    
+    backgroundImage.src = backgrounds.classic; // Default to 'classic' background
+
+    function drawBoard() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+      ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height); // Draw the background
+    }
+
+    function drawBoard() {
+    ctx.filter = 'none';
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before drawing the new background
+
+    // Draw the background image to fill the entire canvas
+    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+    }
+
+
+    /// function drawBoard() {
+      /// ctx.fillStyle = '#e7f5a4';
+      /// ctx.fillRect(0, 0, canvas.width, canvas.height);
+    /// }
+
+function drawSnake() {
+  ctx.fillStyle = '#0d9144'; // Snake body color
+
+  // Function to draw a square with rounded corners
+  function drawRoundedSquare(x, y, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.arcTo(x + gridSize, y, x + gridSize, y + gridSize, radius);
+    ctx.arcTo(x + gridSize, y + gridSize, x, y + gridSize, radius);
+    ctx.arcTo(x, y + gridSize, x, y, radius);
+    ctx.arcTo(x, y, x + gridSize, y, radius);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  // Function to draw the face on the snake's head
+  function drawFace(x, y, direction) {
+    const eyeRadius = gridSize / 6; // Eye radius relative to grid size
+    const eyeOffsetX = gridSize / 4; // Horizontal offset for the eyes
+    const eyeOffsetY = gridSize / 4; // Vertical offset for the eyes
+    const mouthWidth = gridSize / 2;
+    const mouthHeight = gridSize / 4;
+
+    // Save the current state of the canvas to restore later
+    ctx.save();
+
+    // Rotate the canvas according to the direction
+    ctx.translate(x + gridSize / 2, y + gridSize / 2); // Move to the center of the head
+    if (direction === 'up') {
+      ctx.rotate(Math.PI); // Rotate 180 degrees (up)
+    } else if (direction === 'down') {
+      ctx.rotate(0); // No rotation needed (down)
+    } else if (direction === 'left') {
+      ctx.rotate(Math.PI / 2); // Rotate 90 degrees (left)
+    } else if (direction === 'right') {
+      ctx.rotate(-Math.PI / 2); // Rotate -90 degrees (right)
+    }
+
+    // Draw the eyes
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(eyeOffsetX, eyeOffsetY, eyeRadius, 0, Math.PI * 2); // Left eye
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(-eyeOffsetX, eyeOffsetY, eyeRadius, 0, Math.PI * 2); // Right eye
+    ctx.fill();
+    ctx.closePath();
+
+    // Draw the pupils (black)
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.arc(eyeOffsetX, eyeOffsetY, eyeRadius / 2, 0, Math.PI * 2); // Left pupil
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(-eyeOffsetX, eyeOffsetY, eyeRadius / 2, 0, Math.PI * 2); // Right pupil
+    ctx.fill();
+    ctx.closePath();
+
+    // Draw the mouth (smiling)
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(0, gridSize / 2 + mouthHeight / 2, mouthWidth, 0, Math.PI); // Smiling mouth
+    ctx.stroke();
+    ctx.closePath();
+
+    // Restore the canvas state (remove the rotation)
+    ctx.restore();
+  }
+
+  snake.forEach((segment, index) => {
+    const x = segment.x * gridSize;
+    const y = segment.y * gridSize;
+
+    const nextSegment = snake[index + 1] || { x: segment.x, y: segment.y };
+    const prevSegment = snake[index - 1] || { x: segment.x, y: segment.y };
+
+    const directionToNext = { x: nextSegment.x - segment.x, y: nextSegment.y - segment.y };
+    const directionToPrev = { x: segment.x - prevSegment.x, y: segment.y - prevSegment.y };
+
+    // Determine the direction of the snake's movement
+    let direction = 'right'; // Default direction is 'right'
+    if (directionToNext.x === 1 && directionToNext.y === 0) direction = 'right'; // Moving right
+    else if (directionToNext.x === -1 && directionToNext.y === 0) direction = 'left'; // Moving left
+    else if (directionToNext.x === 0 && directionToNext.y === 1) direction = 'down'; // Moving down
+    else if (directionToNext.x === 0 && directionToNext.y === -1) direction = 'up'; // Moving up
+
+    // Check if this is the first segment (head)
+    if (index === 0) {
+      // Draw the head with rounded corners
+      drawRoundedSquare(x, y, gridSize / 4);
+      // Draw the face on the head with the direction it is facing
+      drawFace(x, y, direction);
+    }
+    // Check if this is the last segment (tail) — No rounded corners for the tail
+    else if (index === snake.length - 1) {
+      ctx.fillRect(x, y, gridSize, gridSize); // Draw tail as a normal square
+    }
+    // Body segments in the middle (check for turns)
+    else {
+      const isTurn = (directionToNext.x !== directionToPrev.x) || (directionToNext.y !== directionToPrev.y);
+      if (isTurn) {
+        // Draw a rounded corner for the turning body segment
+        const turnDirection = (directionToNext.x === 0 || directionToNext.y === 0) ? gridSize / 4 : gridSize / 2;
+        drawRoundedSquare(x, y, turnDirection);
+      } else {
+        // Draw straight body segments
+        ctx.fillRect(x, y, gridSize, gridSize);
+      }
+    }
+  });
+}
+
+function drawFood() {
+
+if (mode === 'frenzy') {
+    if (food.type === 'apple') {
+        // Draw the apple's body (red)
+        ctx.fillStyle = '#ff4d4d'; // Red color for the apple
+        ctx.beginPath();
+        ctx.arc(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 2, gridSize / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw the apple's stem (brown)
+        ctx.fillStyle = '#6a4e23'; // Brown color for the stem
+        ctx.beginPath();
+        ctx.moveTo(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 4); // Starting at the top of the apple
+        ctx.lineTo(food.x * gridSize + gridSize / 2, food.y * gridSize); // Going down to the center of the apple
+        ctx.lineWidth = 4;
+        ctx.stroke();
+        ctx.closePath();
+
+        // Optionally, add a leaf to the apple (green)
+        ctx.fillStyle = '#2e8b57'; // Green color for the leaf
+        ctx.beginPath();
+        ctx.moveTo(food.x * gridSize + gridSize / 2, food.y * gridSize - gridSize / 4); // Position the leaf
+        ctx.quadraticCurveTo(food.x * gridSize + gridSize / 1.5, food.y * gridSize - gridSize / 2, food.x * gridSize + gridSize / 2, food.y * gridSize - gridSize / 3); // Leaf shape
+        ctx.fill();
+        ctx.closePath();
+    } else if (food.type === 'pizza') {
+        // Draw pizza (yellow crust and topping)
+        ctx.fillStyle = '#f1c232'; // Yellow color for pizza crust
+        ctx.beginPath();
+        ctx.arc(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 2, gridSize / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw pizza toppings (red)
+        ctx.fillStyle = '#ff6347'; // Tomato topping color
+        ctx.beginPath();
+        ctx.arc(food.x * gridSize + gridSize / 2 - gridSize / 4, food.y * gridSize + gridSize / 2 - gridSize / 4, gridSize / 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw more toppings
+        ctx.fillStyle = '#ff6347'; // Another tomato topping
+        ctx.beginPath();
+        ctx.arc(food.x * gridSize + gridSize / 2 + gridSize / 4, food.y * gridSize + gridSize / 2 + gridSize / 4, gridSize / 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+    } 
+} else {
+    ctx.fillStyle = '#ff4d4d'; // Red color for the apple
+    ctx.beginPath();
+    ctx.arc(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 2, gridSize / 2, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+
+    // Draw the apple's stem (brown)
+    ctx.fillStyle = '#6a4e23'; // Brown color for the stem
+    ctx.beginPath();
+    ctx.moveTo(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 4); // Starting at the top of the apple
+    ctx.lineTo(food.x * gridSize + gridSize / 2, food.y * gridSize); // Going down to the center of the apple
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.closePath();
+
+    // Optionally, add a leaf to the apple (green)
+    ctx.fillStyle = '#2e8b57'; // Green color for the leaf
+    ctx.beginPath();
+    ctx.moveTo(food.x * gridSize + gridSize / 2, food.y * gridSize - gridSize / 4); // Position the leaf
+    ctx.quadraticCurveTo(food.x * gridSize + gridSize / 1.5, food.y * gridSize - gridSize / 2, food.x * gridSize + gridSize / 2, food.y * gridSize - gridSize / 3); // Leaf shape
+    ctx.fill();
+    ctx.closePath();
+    }
+}
+    function moveSnake() {
+      if (!gameLoop) return; // Don't move before the game starts
+
+      const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+
+      if (walls) {
+        if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
+          endGame();
+          return;
+        }
+      } else {
+        head.x = (head.x + tileCount) % tileCount;
+        head.y = (head.y + tileCount) % tileCount;
+      }
+
+      if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        endGame();
+        return;
+      }
+
+      snake.unshift(head);
+        if (head.x === food.x && head.y === food.y) {
+            if (food.type === 'apple') {
+                score += 1;
+            } else if (food.type === 'pizza') {
+                score += 3;
+            }
+            scoreDisplay.textContent = `Score: ${score}`;
+            placeFood();
+            } else {
+            snake.pop();
+            }
+        }
+            
+function placeFood() {
+   let newFoodPosition;
+   do {
+     newFoodPosition = {
+       x: Math.floor(Math.random() * tileCount),
+       y: Math.floor(Math.random() * tileCount)
+     };
+   } while (snake.some(segment => segment.x === newFoodPosition.x && segment.y === newFoodPosition.y));
+
+   // Random food type selection with bias for poison
+   if (mode === 'frenzy') {
+     const foodTypes = ['apple', 'apple', 'pizza']; 
+     const randomFoodType = foodTypes[Math.floor(Math.random() * foodTypes.length)];
+     food = { ...newFoodPosition, type: randomFoodType };
+   } else {
+     food = { ...newFoodPosition, type: 'apple' }; // Regular mode is only apples
+   }
+}
+
+
+
+    function changeDirection(event) {
+      const { key } = event;
+      if (key === 'ArrowUp' && direction.y === 0) direction = { x: 0, y: -1 };
+      if (key === 'ArrowDown' && direction.y === 0) direction = { x: 0, y: 1 };
+      if (key === 'ArrowLeft' && direction.x === 0) direction = { x: -1, y: 0 };
+      if (key === 'ArrowRight' && direction.x === 0) direction = { x: 1, y: 0 };
+
+      // Prevent scrolling when arrow keys are pressed
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(key)) {
+        event.preventDefault();
+      }
+    }
+
+    function endGame() {
+      clearInterval(gameLoop);
+      gameLoop = null; // Set gameLoop to null to stop moving the snake
+      alert(`Game over! Your final score is ${score}.`);
+      restartButton.disabled = false;
+      startButton.style.display = 'block';
+
+      if (score > highScore) {
+    highScore = score;
+
+    setTimeout(() => {
+      highScoreDisplay.textContent = `Highest Score: ${highScore}`;
+    }, 0);
+    }
+    }
+
+    function updateSettings() {
+      walls = wallsToggle.value === 'true';
+      speed = speedToggle.value === 'slow' ? 300 : speedToggle.value === 'medium' ? 150 : 75;
+    }
+
+    function updateBackground() {
+    const selectedBackground = backgroundSelect.value;
+    backgroundImage.src = backgrounds[selectedBackground]; // Set the image source to the selected background
+    backgroundImage.onload = function() {
+        drawBoard(); // Redraw the board with the new background once the image has loaded
+    };
+    }
+
+    function restartGame() {
+      snake = [{ x: 10, y: 10 }];
+      direction = { x: 1, y: 0 };
+      score = 0;
+      scoreDisplay.textContent = `Score: 0`;
+      placeFood();
+      updateSettings();
+      updateBackground();
+      clearInterval(gameLoop);
+      gameLoop = setInterval(() => {
+        drawBoard();
+        drawFood();
+        moveSnake();
+        drawSnake();
+      }, speed);
+    }
+
+    function startGame() {
+      startButton.style.display = 'none';
+      restartButton.disabled = false;
+      restartGame();
+    }
+
+    // Event Listeners
+    wallsToggle.addEventListener('change', updateSettings);
+    speedToggle.addEventListener('change', restartGame);
+    restartButton.addEventListener('click', restartGame);
+    startButton.addEventListener('click', startGame);
+    backgroundSelect.addEventListener('change', updateBackground);
+    modeToggle.addEventListener('change', (event) => {
+       mode = event.target.value;
+        placeFood();  // Recreate food based on the selected mode
+    });
+
+
+    window.addEventListener('keydown', changeDirection);
+</script>
+
+<audio id="game-music" src="game-music.mp3" loop></audio>
+<div class="music-controls">
+    <button id="play-music-button">Play Music</button>
+    <button id="pause-music-button">Pause Music</button>
+</div>
+<button id="start-game-button">Start Game</button>
+
+<script>
+const gameMusic = document.getElementById('game-music');
+
+// Start the game and play music
+startButton.addEventListener('click', () => {
+  gameMusic.play();
+  gameMusic.volume = 0.5; // Set default volume
+  gameMusic.loop = true; // Ensure looping
+  startGame(); // Start game logic
+});
+
+// Pause the game and stop music
+restartButton.addEventListener('click', () => {
+  gameMusic.pause();
+  gameMusic.currentTime = 0; // Reset to start
+  startGame(); // Restart game logic
+});
+
+// Volume control
+const volumeControl = document.getElementById('volumeControl');
+volumeControl.addEventListener('input', (event) => {
+  gameMusic.volume = event.target.value;
+});
+</script>
