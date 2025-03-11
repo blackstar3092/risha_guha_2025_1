@@ -160,7 +160,8 @@ hide: true
         <li><a href="{{site.baseurl}}/sprint/5/CRUD_review">Sprint 5 CRUD Review</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/bigidea4">Big Idea 4 Learnings</a></li>
         <li><a href="{{site.baseurl}}/sprint/5/final">Final Exam Blog</a></li>
-        <li><a href="{{site.baseurl}}/sprint/5/finalmc">2020 MC Review</a><li>
+        <li><a href="{{site.baseurl}}/sprint/5/finalmc">2020 MC Review</a></li>
+        <li><a href="{{site.baseurl}}/sprint/5/ppr">Personalized Project Repository</a></li>
     </ul>
 </details>
     
