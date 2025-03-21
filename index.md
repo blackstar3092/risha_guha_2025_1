@@ -169,7 +169,7 @@ hide: true
     <summary>Sprint 7</summary>
     <ul>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_1">Beneficial and Harmful Lesson Hacks</a></li>
-        <li><a href="{{site.baseurl}}/sprint/7/hacks_2">Digital Divide </a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_2">Digital Divide Hacks</a></li>
     </ul>
 </details>
 
