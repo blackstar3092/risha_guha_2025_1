@@ -165,6 +165,14 @@ hide: true
     </ul>
 </details>
 
+<details>
+    <summary>Sprint 7</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_1">Beneficial and Harmful Lesson Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_2">Digital Divide </a></li>
+    </ul>
+</details>
+
 <p></p>  
 
 <script src="https://utteranc.es/client.js"
