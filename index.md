@@ -170,6 +170,9 @@ hide: true
     <ul>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_1">Beneficial and Harmful Lesson Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_2">Digital Divide Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_3">Computing Bias Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_4">Crowdsoucing Hacks</a></li>
+
     </ul>
 </details>
 
