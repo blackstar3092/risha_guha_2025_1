@@ -168,11 +168,13 @@ hide: true
 <details>
     <summary>Sprint 7</summary>
     <ul>
+        <li><a href="{{site.baseurl}}/sprint/7/tech_talks">Sprint 7 Tech Talk Notes </a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_1">Beneficial and Harmful Lesson Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_2">Digital Divide Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_3">Computing Bias Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_4">Crowdsoucing Hacks</a></li>
-
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_5">Legal and Ethical Implications Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_6">Safe Computing Hacks</a></li>
     </ul>
 </details>
 
