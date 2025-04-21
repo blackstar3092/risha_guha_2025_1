@@ -176,6 +176,7 @@ hide: true
         <li><a href="{{site.baseurl}}/sprint/7/hacks_5">Legal and Ethical Implications Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_6">Safe Computing Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_7">Binary Search Algorithms Hacks</a></li>
+        <li><a href="{{site.baseurl}}/github/pages/cyber_extracredit">Cyber Extra Credit</a></li>
     </ul>
 </details>
 
