@@ -177,6 +177,10 @@ hide: true
         <li><a href="{{site.baseurl}}/sprint/7/hacks_6">Safe Computing Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/hacks_7">Binary Search Algorithms Hacks</a></li>
         <li><a href="{{site.baseurl}}/github/pages/cyber_extracredit">Cyber Extra Credit</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_8">Lists and Filtering Algorithms Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_9">Big O Hacks<</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_10">Undecidable Problems and Graphs and Heuristics Hacks</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/mcreflect">MC Reflection 2021</a></li>
     </ul>
 </details>
 
