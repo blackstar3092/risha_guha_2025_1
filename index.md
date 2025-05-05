@@ -182,6 +182,9 @@ hide: true
         <li><a href="{{site.baseurl}}/sprint/7/hacks_10">Undecidable Problems and Graphs and Heuristics Hacks</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/mcreflect">MC Reflection 2021</a></li>
         <li><a href="{{site.baseurl}}/sprint/7/studyplan">Study Plan</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_11">Binary</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_12">Logic Gates</a></li>
+        <li><a href="{{site.baseurl}}/sprint/7/hacks_13">Digital Images</a></li>
     </ul>
 </details>
 
