@@ -188,6 +188,13 @@ hide: true
     </ul>
 </details>
 
+<details>
+    <summary>Final</summary>
+    <ul>
+        <li><a href="{{site.baseurl}}/sprint/7/final">Final Blog</a></li>
+    </ul>
+</details>
+
 <p></p>  
 
 <script src="https://utteranc.es/client.js"
